@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Examination } from '../../model/Examination';
+import { Action } from '../../model/Action';
+
 
 @Component({
   selector: 'hsp-examination-table',
@@ -7,9 +10,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExaminationTableComponent implements OnInit {
 
-  constructor() { }
+  @Input("items")
+  items: Examination[] = [];
+
+  @Input("showActions")
+  showActions: boolean = false;
+
+  @Output("onAction")
+  private onAction: EventEmitter<Action<Examination>> = new EventEmitter<Action<Examination>>();
+
+  
+
+  constructor() {
+    
+   }
 
   ngOnInit() {
+
   }
 
+  delete(item: Examination) {
+    this.onAction.emit({type: "delete", data: item});
+  }
+
+  update(item: Examination) {
+    this.onAction.emit({type: "update", data: item});
+  }
 }
+
+

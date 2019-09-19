@@ -8,7 +8,8 @@ const routes: Routes = [
   {path: 'table', component: ExaminationTableComponent},
   {path: 'calendar', component: ExaminationCalendarComponent},
   {path: 'set', component: ExaminationSetComponent},
-  {path: '**', redirectTo: '/set', pathMatch: 'full'}
+  {path: 'set/:idDoctor', component: ExaminationTableComponent},
+  {path: '', redirectTo: '/set', pathMatch: 'full'}
 ];
 
 @NgModule({

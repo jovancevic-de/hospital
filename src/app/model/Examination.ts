@@ -8,5 +8,5 @@ export class Examination {
 	
 	private patient: Patient;
 	
-	private examinationDat: Date;
+	private examinationDate: Date;
 }

@@ -1,13 +1,16 @@
-
 <div class="row">
     <div class="col-12">
-        <hsp-examination-table></hsp-examination-table>
-        <!--<hsp-examination-table [items]="menuPage.items" [showActions]="showActions" (onAction)="action($event)"></hsp-examination-table>-->
+        <h1>{{mW}}</h1>
+    </div>
+
+    <div class="col-12" *ngIf="isDoctorSelected">
+        <hsp-examination-table [items]="examinationPage.items" [showActions]="showActions" (onAction)="action($event)">
+        </hsp-examination-table>
     </div>
 </div>
 <div class="row">
     <div class="col-12">
-        <ngb-pagination [page]="examinationPage.currentPage" (pageChange)="setPage($event)" [pageSize]="examinationPage.itemsPerPage"
-            [collectionSize]="examinationPage.totalItems"></ngb-pagination>
+        <ngb-pagination *ngIf="isDoctorSelected" [page]="examinationPage.currentPage" (pageChange)="setPage($event)"
+            [pageSize]="examinationPage.itemsPerPage" [collectionSize]="examinationPage.totalItems"></ngb-pagination>
     </div>
 </div>

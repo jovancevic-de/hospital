@@ -1,1 +1,31 @@
-<p>examination-table works!</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Examianations </th>
+            <th scope="col" *ngIf=true>
+                <button type="button" class="btn btn-primary mr-2" (click)="add(item)">Add Car</button>
+            </th>
+        </tr>
+        
+        <tr>
+            <th scope="col">Doctor
+                <button class="btn btn-link" (click)="onSort('Name')"><span class="fa fa-sort"></span></button>
+            </th>
+            <th scope="col">Patient</th>
+            <th scope="col">Examination Date</th>
+            <th scope="col" *ngIf="ShowActions">Actions</th>
+        </tr>
+        
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of items">
+            <td>{{item.doctor.firstName + " " + item.doctor.lastName}}</td>
+            <td>{{item.patient.firstName + " " + item.patient.lastName}}</td>
+            <td>{{item.examinationDate | date : "dd.MM.yyyy HH:mm"}}</td>
+            <td *ngIf="ShowActions">
+                <button type="button" class="btn btn-primary mr-2" (click)="edit(item)">Edit</button>
+                <button type="button" class="btn btn-danger mr-2" (click)="delete(item)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
