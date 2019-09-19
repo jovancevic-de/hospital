@@ -25,7 +25,7 @@ export class ExaminationSetComponent implements OnInit {
   private mW: string;
   
   constructor(private activatedRoute: ActivatedRoute, private examinationService: ExaminationService) { 
-    this.idDoctor = this.activatedRoute.snapshot.params.idDoctor;
+    this.activatedRoute.queryParams.subscribe(p => this.idDoctor = this.activatedRoute.snapshot.params.idDoctor);
     if (this.idDoctor) {
       this.isDoctorSelected = true;
       
@@ -33,8 +33,11 @@ export class ExaminationSetComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.activatedRoute.params.subscribe(routeParams => {
+      this.refreshTable(routeParams.idDoctor);
+    });  
     if (this.isDoctorSelected) {
-      this.refreshTable(this.idDoctor);
+      //this.refreshTable(this.idDoctor);
     } else {
       this.mW = "Welcome. Select doctor."
     }

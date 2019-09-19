@@ -8,7 +8,9 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 import { ExaminationSetComponent } from './examination/examination-set/examination-set.component';
 import { ExaminationTableComponent } from './examination/examination-table/examination-table.component';
-import { ExaminationCalendarComponent } from './examination/examination-calendar/examination-calendar.component'
+import { ExaminationCalendarComponent } from './examination/examination-calendar/examination-calendar.component';
+import { ExaminationEditComponent } from './examination/examination-edit/examination-edit.component'
+import { RxReactiveFormsModule } from '@rxweb/reactive-form-validators';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,8 @@ import { ExaminationCalendarComponent } from './examination/examination-calendar
     NavbarComponent,
     ExaminationSetComponent,
     ExaminationTableComponent,
-    ExaminationCalendarComponent
+    ExaminationCalendarComponent,
+    ExaminationEditComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +27,8 @@ import { ExaminationCalendarComponent } from './examination/examination-calendar
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgbPaginationModule
+    NgbPaginationModule,
+    RxReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
