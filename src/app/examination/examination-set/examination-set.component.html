@@ -1,0 +1,13 @@
+
+<div class="row">
+    <div class="col-12">
+        <hsp-examination-table></hsp-examination-table>
+        <!--<hsp-examination-table [items]="menuPage.items" [showActions]="showActions" (onAction)="action($event)"></hsp-examination-table>-->
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <ngb-pagination [page]="examinationPage.currentPage" (pageChange)="setPage($event)" [pageSize]="examinationPage.itemsPerPage"
+            [collectionSize]="examinationPage.totalItems"></ngb-pagination>
+    </div>
+</div>
