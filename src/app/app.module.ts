@@ -9,8 +9,12 @@ import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 import { ExaminationSetComponent } from './examination/examination-set/examination-set.component';
 import { ExaminationTableComponent } from './examination/examination-table/examination-table.component';
 import { ExaminationCalendarComponent } from './examination/examination-calendar/examination-calendar.component';
-import { ExaminationEditComponent } from './examination/examination-edit/examination-edit.component'
+
 import { RxReactiveFormsModule } from '@rxweb/reactive-form-validators';
+
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { ExaminationEditorComponent } from './examination/examination-editor/examination-editor.component';
+import { ExaminationFormComponent } from './examination/examination-form/examination-form.component';
 
 @NgModule({
   declarations: [
@@ -19,16 +23,20 @@ import { RxReactiveFormsModule } from '@rxweb/reactive-form-validators';
     ExaminationSetComponent,
     ExaminationTableComponent,
     ExaminationCalendarComponent,
-    ExaminationEditComponent
+    ExaminationEditorComponent,
+    ExaminationFormComponent,
+    
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
     NgbPaginationModule,
-    RxReactiveFormsModule
+    RxReactiveFormsModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

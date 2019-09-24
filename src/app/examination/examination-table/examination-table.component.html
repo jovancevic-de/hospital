@@ -1,18 +1,18 @@
 <table class="table table-striped">
     <thead>
         <tr>
-            <th scope="col">Examianations </th>
-            <th scope="col" *ngIf=true>
-                <button type="button" class="btn btn-primary mr-2" (click)="add(item)">Add Car</button>
+            <th scope="col-8"><h5>Examinations by doctor </h5> </th>
+            <th scope="col-4" *ngIf=true>
+                <button type="button" class="btn btn-primary mr-2" *ngIf=false>Add Examination</button>
             </th>
         </tr>
         
         <tr>
-            <th scope="col">Doctor
-                <button class="btn btn-link" (click)="onSort('Name')"><span class="fa fa-sort"></span></button>
-            </th>
+            <th scope="col">Doctor</th>
             <th scope="col">Patient</th>
-            <th scope="col">Examination Date</th>
+            <th scope="col">Examination Date
+                <button class="btn btn-link" (click)="onSort('examinationDate')"><span class="fa fa-sort"></span></button>
+            </th>
             <th scope="col" *ngIf="ShowActions">Actions</th>
         </tr>
         

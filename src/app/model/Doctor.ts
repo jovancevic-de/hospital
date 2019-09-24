@@ -1,9 +1,9 @@
 export class Doctor {
-    private id: number;
+     id: number;
 	
-	private firstName: string;
+	 firstName: string;
 	
-	private lastName: string;
+	 lastName: string;
 	
 	
 }

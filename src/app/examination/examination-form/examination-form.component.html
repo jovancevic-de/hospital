@@ -1,0 +1,60 @@
+<p>{{examinationForm?.value | json}}</p>
+<p>{{examinationForm?.status | json}}</p>
+
+
+
+<div class="row">
+
+    <div class="col-2"></div>
+
+    <div class="col-8">
+        <!--Pokusaj da se primene ng-noty notifikacije
+    <button (click)="openNgNoty()" aria-label="Show an example ng-noty">Show ng-noty</button>
+    <button class="button button--primary" type='button' (click)="showNotification('warning', 'Email is required' )">Warning me!</button>-->
+        <h5>Add/Edit Examination</h5>
+        
+        <form [formGroup]="examinationForm" (ngSubmit)="onSubmit()">
+            
+            <div class="form-group row">
+                <label for="doctor" class="col-2 col-form-label">Doctor</label>
+                <div class="col-10">
+                    <select class="form-control" id="doctor" name="doctor" formControlName="doctor">
+                        <option name="doctor" *ngFor="let doctor of doctors" [ngValue]="doctor">
+                            {{doctor.firstName }} {{doctor.lastName}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="form-group row">
+                <label for="patient" class="col-2 col-form-label">Patient</label>
+                <div class="col-10">
+                    <select class="form-control" id="patient" name="patient" formControlName="patient">
+                        <option name="patient" *ngFor="let patient of patients; trackBy: patientId" [ngValue]="patient">
+                            {{patient.firstName }} {{patient.lastName}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="examinationDate" class="col-2 col-form-label">Examination Date</label>
+                <div class="col-10">
+                    <input class="form-control" type="text" id="examinationDate" placeholder=" "
+                        formControlName="examinationDate">
+                </div>
+            </div>
+
+
+            <div class="form-group row float-right">
+                <div class="col-12">
+                    <button class="btn btn-primary" type="submit">Submit</button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+    <div class="col-2"></div>
+
+</div>

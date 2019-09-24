@@ -4,8 +4,9 @@
     </div>
 
     <div class="col-12" *ngIf="isDoctorSelected">
-        <hsp-examination-table [items]="examinationPage.items" [showActions]="showActions" (onAction)="action($event)">
+        <hsp-examination-table  [items]="examinationPage.items" [showActions]="showActions" (onAction)="action($event)">
         </hsp-examination-table>
+        <!--  (emiter)="onDoctor($event)"-->
     </div>
 </div>
 <div class="row">
@@ -14,3 +15,4 @@
             [pageSize]="examinationPage.itemsPerPage" [collectionSize]="examinationPage.totalItems"></ngb-pagination>
     </div>
 </div>
+
