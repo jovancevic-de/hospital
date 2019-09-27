@@ -14,6 +14,6 @@ export class Examination {
 		this.id = obj && obj.id || null;
 		this.doctor = obj && obj.doctor || null;
 		this.patient = obj && obj.patient || null;
-		this.examinationDate = obj && obj.examinationDate || null;
+		this.examinationDate = obj && new Date(obj.examinationDate) || null;
 	  }
 }

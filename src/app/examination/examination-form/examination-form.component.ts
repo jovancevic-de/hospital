@@ -58,11 +58,11 @@ export class ExaminationFormComponent implements OnInit {
     const id: number = this.item.id;
 
     if (id) {
+      //this.createForm();
       this.examinationService.getOneExamination(id).subscribe(examination => {
         this.examination = examination;
-        // let doctorName: string = examination.doctor.firstName + examination.doctor.lastName;
-        // let patientName: string = examination.patient.firstName + examination.patient.lastName;
-        // let examinationDateSet: Date = examination.examinationDate;
+        //workaround jer ne moze da setuje datetime ili ne umem, pa ga postavljam na null
+        this.examination.examinationDate = null;
         this.examinationForm.patchValue(this.examination);
       });
     } 
@@ -71,9 +71,9 @@ export class ExaminationFormComponent implements OnInit {
 
   createForm() {
     this.examinationForm = this.fb.group({
-      doctor: '',
-      patient: '',
-      examinationDate: ''
+      doctor: [''],
+      patient: [''],
+      examinationDate: ['']    
     });
   }
 

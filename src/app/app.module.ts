@@ -15,7 +15,7 @@ import { RxReactiveFormsModule } from '@rxweb/reactive-form-validators';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { ExaminationEditorComponent } from './examination/examination-editor/examination-editor.component';
 import { ExaminationFormComponent } from './examination/examination-form/examination-form.component';
-
+import { DlDateTimeDateModule, DlDateTimePickerModule } from 'angular-bootstrap-datetimepicker';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +36,8 @@ import { ExaminationFormComponent } from './examination/examination-form/examina
     HttpClientModule,
     NgbPaginationModule,
     RxReactiveFormsModule,
+    DlDateTimeDateModule,
+    DlDateTimePickerModule
     
   ],
   providers: [],

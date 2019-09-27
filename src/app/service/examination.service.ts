@@ -34,7 +34,7 @@ export class ExaminationService {
 	// }
 
 	saveExamination(newExamination :Examination) :Observable<Examination>{
-		return this.httpClient.post<Examination>(this.examinationUrl + "/api/examinations", newExamination);
+		return this.httpClient.post<Examination>(this.examinationUrl + "/api/examinations/", newExamination);
 	}
 
 	updateExamination(editedExamination :Examination) :Observable<Examination>{
