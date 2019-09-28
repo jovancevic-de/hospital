@@ -7,7 +7,6 @@ import {ExaminationCalendarComponent} from './examination/examination-calendar/e
 import {ExaminationEditorComponent} from './examination/examination-editor/examination-editor.component'
 
 const routes: Routes = [
-  {path: 'table', component: ExaminationTableComponent},
   {path: 'calendar', component: ExaminationCalendarComponent},
   {path: 'set', component: ExaminationSetComponent},
   {path: 'editor', component: ExaminationEditorComponent},

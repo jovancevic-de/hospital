@@ -78,7 +78,9 @@ export class ExaminationFormComponent implements OnInit {
   }
 
   onSubmit() {
-    const submittedExamination: any = this.examinationForm.value;
+    let submittedExamination: any = this.examinationForm.value;
+    //mora se dodati id jer reactiveForm.value skida samo ono sto je na formi
+    submittedExamination.id = this.examination.id;
     this.onSave.emit(submittedExamination);
     this.createForm();
     }

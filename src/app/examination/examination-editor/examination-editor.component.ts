@@ -12,20 +12,20 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ExaminationEditorComponent implements OnInit {
 
-  @ViewChild(ExaminationSetComponent, {static: false})
+  @ViewChild(ExaminationSetComponent, { static: false })
   private examinationSet: ExaminationSetComponent;
   private isDoctorSelected: boolean = false;
   public idDoctor: number = 0;
 
-  private date = new Date ("01-10-2019 08:00");
-  selectedItem: Examination = {id: null, doctor: {id: null, firstName:"", lastName:"" }, patient: {id: null, firstName:"", lastName:"" }, examinationDate: this.date};
+  private date = new Date("01-10-2019 08:00");
+  selectedItem: Examination = { id: null, doctor: { id: null, firstName: "", lastName: "" }, patient: { id: null, firstName: "", lastName: "" }, examinationDate: this.date };
 
   constructor(private examinationService: ExaminationService, private activatedRoute: ActivatedRoute) {
     this.activatedRoute.queryParams.subscribe(p => this.idDoctor = this.activatedRoute.snapshot.params.idDoctor);
     if (this.idDoctor) {
       this.isDoctorSelected = true;
-    } 
-   }
+    }
+  }
 
   ngOnInit() {
     // this.activatedRoute.params.subscribe(routeParams => {
@@ -33,12 +33,12 @@ export class ExaminationEditorComponent implements OnInit {
     // });
   }
 
-  
+
 
   handleActions(action: Action<Examination>) {
-    if(action.type == "delete") {
+    if (action.type == "delete") {
       this.deleteItem(action.data);
-    } else if(action.type == "update") {
+    } else if (action.type == "update") {
       this.editItem(action.data);
     }
   }
